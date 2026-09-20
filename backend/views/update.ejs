@@ -1,0 +1,19 @@
+<%- include("includes/head.ejs") %>
+<body>
+    <%- include("includes/header.ejs")  %>
+    <main>
+        <h3>Edit info</h3>
+        <form action="/posts/<%= post.id %>?__method=PATCH" method="post">
+            <div>
+                <input type="text" name="user" placeholder="enter username" value="<%= post.user %>">
+            </div>
+            <br>
+            <div>
+                <textarea name="content" id="text" rows="5" cols="35"><%= post.content %></textarea>
+            </div>
+            <br>
+            <button>submit</button>
+        </form>
+    </main>
+    <%- include("includes/footer.ejs")  %>
+</body>

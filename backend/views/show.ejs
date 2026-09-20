@@ -1,0 +1,19 @@
+<%- include("includes/head.ejs") %>
+<body>
+    <%- include("includes/header.ejs") %>
+    <main class="main-post">
+        <h2>Here is your post in detail</h2>
+        <p>post id : <%= post.id %></p>
+        <div>
+            <h4>username : <%= post.user %></h4>
+            <h4>content : <%= post.content %></h4>
+        </div>
+        <button><a href="/posts/<%= post.id %>/edit">edit</a></button>
+        <span>
+            <form action="/posts/<%= post.id %>?__method=DELETE" method="post" id="deleteForm">
+                <button>Delete</button>
+            </form>
+        </span>
+    </main>
+    <%- include("includes/footer.ejs") %>
+</body>
